@@ -15,13 +15,25 @@
 #   use_lwt             OPTIONAL (default = false)      use LWT for availability in discovery payloads (discovery packet also include 600s timeout of sensor data)
 #   via_pubs            OPTIONAL (default = false)      publish Time_via_%topic% and RSSI_via_%topic% data with each data set
 #   sensor_retain       OPTIONAL (default = false)      add retain flag to sensor data set publishes
-#   publish attributes  OPTIONAL (default = false)      publish individual topics for each attribute in addition to the JSON payload
+#   publish_attributes  OPTIONAL (default = false)      publish individual topics for each attribute in addition to the JSON payload
 #   temp_precision      OPTIONAL (default = 2, int)     digits of precision for temperature
 #   humi_precision      OPTIONAL (default = 1, int)     digits of precision for humidity
-var user_config = {'A4C138AAAAAA': {'alias': 'trial_govee5075', 'model': 'GVH5075', 'discovery': true},
+var user_config = {
+                   'A4C138AAAAAA': {'alias': 'trial_govee5075', 'model': 'GVH5075', 'discovery': true},
                    'A4C138BBBBBB': {'alias': 'other_govee5075', 'model': 'GVH5075', 'via_pubs': false},
+                   'A4C1381XXXXX': {'alias': 'test_govee5072', 'model': 'GVH5072'},
+                   'A4C1381XXXXX': {'alias': 'test_govee5101', 'model': 'GVH5101'},
+                   'A4C1381XXXXX': {'alias': 'test_govee5102', 'model': 'GVH5102'},
+                   'C33130XXXXXX/1': {'alias': 'govee5182-2probe-meats', 'model': 'GVH5182'},
+                   'A4C138XXXXXX': {'alias': 'govee5183meats', 'model': 'GVH5183'},
+                   'D03232XXXXXX/1': {'alias': 'govee5184-4probe-meats', 'model': 'GVH5184'},
                    'A4C138CCCCCC': {'alias': 'trial_ATCpvvx', 'model': 'ATCpvvx', 'discovery': true, 'use_lwt': true},
-                   '494208DDDDDD': {'alias': 'trial_inkbird', 'model': 'IBSTH2', 'discovery': true}}
+                   'A4C138CCCCCC': {'alias': 'ATC_on_milike', 'model': 'ATCmi'},
+                   '494208DDDDDD': {'alias': 'trial_inkbird', 'model': 'IBSTH2', 'discovery': true},
+                   'D4E4A3BBBBBB/1': {'alias': 'sbot_TH', 'model': 'WoSensorTH'},
+                   'D4BD28AAAAAA/1': {'alias': 'sbot_contact', 'model': 'WoContact'},
+                   'FC7CADCCCCCC/1': {'alias': 'sbot_motion', 'model': 'WoPresence'},
+                   }
 var base_topic = 'tele/tasmota_blerry' # where to publish the sensor data
 
 
